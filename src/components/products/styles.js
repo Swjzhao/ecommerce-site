@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  listWrapper: {
+    paddingTop: '16px',
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+  },
 }));
 
 export default useStyles;

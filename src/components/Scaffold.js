@@ -1,11 +1,10 @@
-import {Container} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import React from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: '74px',
+    marginTop: '64px',
   },
 }));
 
@@ -13,9 +12,12 @@ const Scaffold = (props) => {
   const {children} = props;
   const classes = useStyles();
   return (
-    <Container maxWidth={false} className={classes.root}>
-      {children}
-    </Container>
+    <>
+
+      <div className={classes.root}>
+        {children}
+      </div>
+    </>
   );
 };
 
