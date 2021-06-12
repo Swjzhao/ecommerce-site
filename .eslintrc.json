@@ -1,22 +1,29 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "google"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "google"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "unused-imports", "simple-import-sort", "react-hooks"],
+  "rules": {
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "require-jsdoc": 0,
+    "no-invalid-this": 0,
+    "max-len": 0,
+    "unused-imports/no-unused-imports": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "react/prop-types": 0,
+    "operator-linebreak": ["error", "after"],
+    "no-unused-vars": 1
+  }
 }
