@@ -1,11 +1,15 @@
 import {AppBar, Badge, IconButton, Toolbar, Typography} from '@material-ui/core';
 import {ShoppingCart} from '@material-ui/icons';
 import React from 'react';
+import {useSelector} from 'react-redux';
 
 import useStyles from './styles';
 
 const NavBar = () => {
   const classes = useStyles();
+  const count = useSelector((state) => state?.user?.cart?.total_items);
+
+
   return (
     <AppBar position="fixed" className={classes.appBar} color="inherit">
       <Toolbar>
@@ -16,7 +20,7 @@ const NavBar = () => {
         <div className={classes.grow} />
         <div className={classes.button}>
           <IconButton aria-label="Shopping cart" color="inherit">
-            <Badge badgeContent={0} color="secondary">
+            <Badge badgeContent={count} color="secondary">
               <ShoppingCart />
             </Badge>
           </IconButton>
