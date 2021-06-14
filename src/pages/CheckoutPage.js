@@ -16,7 +16,7 @@ import {commerce} from '../lib/commerce';
 const steps = ['Shipping', 'Payment', 'Review'];
 
 const CheckoutPage = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();

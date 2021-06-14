@@ -133,7 +133,7 @@ const AddressForm = (props) => {
           </Grid>
           <br />
 
-          <FormNavButtons step={step} />
+          <FormNavButtons step={0} />
         </form>
       </FormProvider>
     </>

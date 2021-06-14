@@ -1,5 +1,6 @@
-import {Button, Divider, Grid, Link, Typography} from '@material-ui/core';
+import {Button, Divider, Grid, Typography} from '@material-ui/core';
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import CartItem from './CartItem';
 import useStyles from './styles';
@@ -49,7 +50,7 @@ const CartListing = (props) => {
             className={classes.emptyButton}
             size='large'
             component={Link}
-            href='/checkout'
+            to='/checkout'
             type='button'
             variant='contained'
             color='primary'

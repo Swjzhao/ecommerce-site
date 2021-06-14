@@ -12,7 +12,8 @@ import ReviewForm from './ReviewForm';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const PaymentForm = (props) => {
-  const {backStep, checkoutToken} = props;
+  const {backStep, checkoutToken, shippingData} = props;
+  console.log(shippingData);
 
   const handleSubmit = async (e, elements, stripe) => {
     e.preventDefault();

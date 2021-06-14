@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 import {NavBar} from './components';
 import Scaffold from './components/Scaffold';
@@ -24,25 +29,28 @@ const App = () => {
 
   return (
     <div>
-      <NavBar />
-      <Scaffold>
-        <Router>
+
+
+      <Router>
+        <NavBar />
+        <Scaffold>
           <Switch>
-            <Route exact path="/">
-              <HomePage
-                products={products} /> </Route>
-            <Route exact path="/cart">
+            <Route exact path='/'>
+              <HomePage products={products} />
+            </Route>
+            <Route exact path='/cart'>
               <CartPage />
             </Route>
-            <Route exact path="/checkout">
+            <Route exact path='/checkout'>
               <CheckoutPage />
             </Route>
-            <Route path="/">
-              <Redirect to="/" />
+            <Route path='/'>
+              <Redirect to='/' />
             </Route>
           </Switch>
-        </Router>
-      </Scaffold>
+        </Scaffold>
+      </Router>
+
     </div>
   );
 };

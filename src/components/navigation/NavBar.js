@@ -2,13 +2,13 @@ import {
   AppBar,
   Badge,
   IconButton,
-  Link,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import {ShoppingCart} from '@material-ui/icons';
 import React from 'react';
 import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 import logo from '../../assets/EdenLogo.png';
 import useStyles from './styles';
@@ -20,7 +20,7 @@ const NavBar = () => {
     <AppBar position='fixed' className={classes.appBar} color='inherit'>
       <Toolbar>
         <Typography className={classes.logo} variant='h6'>
-          <Link href='/'>
+          <Link to='/'>
             <IconButton
               aria-label='Shopping cart'
               color='inherit'
@@ -32,7 +32,7 @@ const NavBar = () => {
         </Typography>
         <div className={classes.grow} />
         <div className={classes.button}>
-          <Link href='/cart'>
+          <Link to='/cart'>
             <IconButton aria-label='Shopping cart' color='inherit'>
               <Badge badgeContent={count} color='secondary'>
                 <ShoppingCart />
