@@ -18,11 +18,11 @@ const AddressForm = (props) => {
   const [shippingCountry, setShippingCountry] = useState('');
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
   const [shippingSubdivision, setShippingSubdivision] = useState('');
-  const [shippingOptions, setShippingOptions] = useState([]);
-  const [shippingOption, setShippingOption] = useState('');
+  // const [shippingOptions, setShippingOptions] = useState([]);
+  // const [shippingOption, setShippingOption] = useState('');
   const methods = useForm();
 
-  const {checkoutToken, step, next} = props;
+  const {checkoutToken, next} = props;
 
   const fetchShippingCountries = async (checkoutTokenId) => {
     const res = await commerce.services.localeListShippingCountries(

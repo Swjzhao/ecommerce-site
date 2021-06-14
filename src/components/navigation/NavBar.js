@@ -32,13 +32,13 @@ const NavBar = () => {
         </Typography>
         <div className={classes.grow} />
         <div className={classes.button}>
-          <Link to='/cart'>
-            <IconButton aria-label='Shopping cart' color='inherit'>
-              <Badge badgeContent={count} color='secondary'>
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
-          </Link>
+
+          <IconButton component={Link} to='/cart'aria-label='Shopping cart' color='inherit'>
+            <Badge badgeContent={count} color='secondary'>
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
+
         </div>
       </Toolbar>
     </AppBar>

@@ -55,6 +55,7 @@ const PaymentForm = (props) => {
         },
       },
     };
+    console.log(finalOrderData);
   };
   return (
     <div>
