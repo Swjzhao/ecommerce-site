@@ -7,7 +7,6 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 
-import FormNavButtons from './FormNavButtons';
 import useStyles from './styles';
 
 const ReviewForm = (props) => {
@@ -40,7 +39,6 @@ const ReviewForm = (props) => {
           </Typography>
         </ListItem>
       </List>
-      <FormNavButtons step={2} />
     </>
   );
 };

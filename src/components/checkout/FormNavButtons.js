@@ -14,7 +14,7 @@ const FormNavButtons = (props) => {
         <Button component={Link} variant="outlined" href="/cart">Back to Cart</Button> :
         <Button variant="outlined" onClick={backStep}>Back</Button>}
       <Button type="submit" variant="contained" color="primary">
-        {props.step && props.step == 2 ?'Place Order' : 'Next' }</Button>
+        {props.step && props.step == 1 ?'Place Order' : 'Next' }</Button>
     </div>
   );
 };

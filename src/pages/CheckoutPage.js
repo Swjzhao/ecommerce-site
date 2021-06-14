@@ -9,7 +9,7 @@ import {
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 
-import {AddressForm, PaymentForm, ReviewForm} from '../components/checkout';
+import {AddressForm, ConfirmationForm, PaymentForm} from '../components/checkout';
 import useStyles from '../components/checkout/styles';
 import {commerce} from '../lib/commerce';
 
@@ -51,14 +51,13 @@ const CheckoutPage = () => {
             checkoutToken={checkoutToken}
             nextStep={nextStep}
             backStep={backStep}
+            shippingData = {shippingData}
           />
         );
       case 2:
         return (
-          <ReviewForm
+          <ConfirmationForm
             checkoutToken={checkoutToken}
-            nextStep={nextStep}
-            backStep={backStep}
           />
         );
     }
