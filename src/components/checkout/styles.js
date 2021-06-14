@@ -49,4 +49,21 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  itemIcon: {
+
+    '& img': {
+      objectFit: 'contain',
+      height: '80px',
+      width: '80px',
+      paddingLeft: '10px',
+      paddingRight: '10px',
+      [theme.breakpoints.down('xs')]: {
+        height: '80px',
+        width: '80px',
+      },
+    },
+  },
+
+
 }));

@@ -4,9 +4,9 @@ import {Controller, useFormContext} from 'react-hook-form';
 
 const CustomTextField = (props) => {
   const {control} = useFormContext();
-  const {name, label, required, half} = props;
+  const {name, label, required, col} = props;
   return (
-    <Grid item xs={12} sm={half ? 6: 12}>
+    <Grid item xs={12} sm={col ?? 12}>
       <Controller
         render={({field}) => (
           <TextField
