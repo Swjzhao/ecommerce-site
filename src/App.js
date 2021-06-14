@@ -29,8 +29,6 @@ const App = () => {
 
   return (
     <div>
-
-
       <Router>
         <NavBar />
         <Scaffold>

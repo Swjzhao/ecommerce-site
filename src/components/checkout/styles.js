@@ -1,6 +1,10 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+
+  wrapper: {
+    paddingTop: '1px',
+  },
   appBar: {
     position: 'relative',
   },
