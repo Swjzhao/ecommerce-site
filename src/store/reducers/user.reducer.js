@@ -5,7 +5,7 @@ const initState = {
 };
 const userReducer = (state = initState, action) => {
   switch (action.type) {
-    case types.ADD_ALL_CART:
+    case types.SET_CART:
       console.log(action.payload);
       return {
         cart: action.payload,

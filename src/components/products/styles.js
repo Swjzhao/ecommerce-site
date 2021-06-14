@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
   },
+
 }));
 
 export default useStyles;

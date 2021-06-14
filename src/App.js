@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import {NavBar, ProductListings} from './components';
+import {Cart, NavBar, ProductListings} from './components';
 import Scaffold from './components/Scaffold';
 import {commerce} from './lib/commerce';
 import {addAllCart} from './store/actions';
@@ -24,8 +25,17 @@ const App = () => {
     <div>
       <NavBar />
       <Scaffold>
-        <ProductListings
-          products={products}/>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <ProductListings
+                products={products} /> </Route>
+            <Route exact path="/cart">
+              <Cart/>
+            </Route>
+
+          </Switch>
+        </Router>
       </Scaffold>
     </div>
   );
