@@ -28,17 +28,18 @@ const CartItem = (props) => {
       <div className={classes.itemInfoBox}>
         <Typography variant="h6">{item.name}</Typography>
         <div className={classes.itemAction}>
-          <Typography variant="p">Quantity</Typography>
-          <Select
-            value={quantity}
-            onChange={handleChange}
-            input={<CustomizedSelect />}
-          >
-            {qtyArray.map((num) =>
-              <MenuItem value={num} key={num}>{num}</MenuItem>,
-            )}
+          <Typography component="p">Quantity
+            <Select
+              value={quantity}
+              onChange={handleChange}
+              input={<CustomizedSelect />}
+            >
+              {qtyArray.map((num) =>
+                <MenuItem value={num} key={num}>{num}</MenuItem>,
+              )}
 
-          </Select>
+            </Select>
+          </Typography>
         </div>
       </div>
       <div className={classes.itemPrice}>

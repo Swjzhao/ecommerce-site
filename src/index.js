@@ -9,7 +9,7 @@ import {Provider} from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
-
+const defaultTheme = createMuiTheme({});
 const theme = createMuiTheme({
   '@global': {
     root: {
@@ -31,6 +31,26 @@ const theme = createMuiTheme({
       main: '#FF0000',
     },
   },
+  'overrides': {
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+      },
+    },
+    MuiTypography: {
+      h6: {
+        [defaultTheme.breakpoints.down('xs')]: {
+          fontSize: '16px',
+        },
+      },
+      p: {
+        [defaultTheme.breakpoints.down('xs')]: {
+          fontSize: '12px',
+        },
+      },
+    },
+  },
+
 });
 
 
