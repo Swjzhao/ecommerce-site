@@ -1,4 +1,4 @@
-import {Container, Typography} from '@material-ui/core';
+import {Button, Container, Link, Typography} from '@material-ui/core';
 import React from 'react';
 import {useSelector} from 'react-redux';
 
@@ -16,12 +16,20 @@ const Cart = () => {
       <Typography className={classes.title} variant='h4'>
         Your Shopping Cart
       </Typography>
-      {cart?.line_items.length !== 0 ? (
+      {cart?.line_items.length && cart?.line_items.length !== 0 ? (
           <CartListing cart={cart}/>
           ) : (
-        <Typography variant='subtitle1'>
-          You have no items in your shopping cart
-        </Typography>
+            <>
+              <Typography variant='subtitle1'>
+                      You have no items in your shopping cart
+              </Typography>
+              <Button component={Link}
+                style={{textDecoration: 'none'}}
+                to='/'
+                type='button'
+                variant='contained'
+                color='primary'> Continue Shopping </Button>
+            </>
       )}
     </Container>
   );

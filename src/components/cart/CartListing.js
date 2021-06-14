@@ -55,6 +55,7 @@ const CartListing = (props) => {
             color='primary'
             fullWidth
             classes={{label: classes.buttonLabel}}
+            style={{textDecoration: 'none'}}
           >
             Checkout
           </Button>

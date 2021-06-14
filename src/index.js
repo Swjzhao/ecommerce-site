@@ -18,6 +18,9 @@ const theme = createMuiTheme({
       margin: 0,
       padding: 0,
     },
+    a: {
+      textDecoration: 'none',
+    },
   },
   'typography': {
     'margin': '0 !important',
@@ -34,6 +37,16 @@ const theme = createMuiTheme({
   'overrides': {
     MuiButton: {
       root: {
+        'textTransform': 'none',
+        'textDecoration': 'none',
+      },
+    },
+    MuiLink: {
+
+      'textDecoration': 'none',
+      'textTransform': 'none',
+      '&:focus, &:hover, &:visited, &:link, &:active': {
+        textDecoration: 'none',
         textTransform: 'none',
       },
     },
