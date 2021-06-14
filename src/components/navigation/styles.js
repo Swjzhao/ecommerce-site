@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
   },
+  logoImg: {
+    height: '25px',
+  },
   title: {
     flexGrow: 1,
     alignItems: 'center',

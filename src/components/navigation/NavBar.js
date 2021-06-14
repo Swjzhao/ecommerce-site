@@ -10,8 +10,8 @@ import {ShoppingCart} from '@material-ui/icons';
 import React from 'react';
 import {useSelector} from 'react-redux';
 
+import logo from '../../assets/EdenLogo.png';
 import useStyles from './styles';
-
 const NavBar = () => {
   const classes = useStyles();
   const count = useSelector((state) => state?.user?.cart?.total_items);
@@ -26,8 +26,7 @@ const NavBar = () => {
               color='inherit'
               disableRipple
             >
-              <img src='' alt='Title' className={classes.logoImg} />
-              Title
+              <img src={logo} alt='Title' height={40} styles={{resizeMode: 'contain'}} />
             </IconButton>
           </Link>
         </Typography>
