@@ -6,8 +6,7 @@ import CartListing from '../components/cart/CartListing';
 import useStyles from '../components/cart/styles';
 
 const Cart = () => {
-  // const isEmpty = useSelector((state) => state?.user?.cart?.total_items === 0);
-  const cart = useSelector((state) => state.user.cart);
+  const cart = useSelector((state) => state.cart.cart);
   const classes = useStyles();
   console.log(cart);
 

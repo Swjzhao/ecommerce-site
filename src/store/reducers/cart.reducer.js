@@ -3,7 +3,7 @@ import * as types from '../constants';
 const initState = {
   cart: null,
 };
-const userReducer = (state = initState, action) => {
+const cartReducer = (state = initState, action) => {
   switch (action.type) {
     case types.SET_CART:
       console.log(action.payload);
@@ -15,4 +15,4 @@ const userReducer = (state = initState, action) => {
   }
 };
 
-export default userReducer;
+export default cartReducer;

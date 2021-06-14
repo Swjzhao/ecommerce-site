@@ -14,7 +14,7 @@ import logo from '../../assets/EdenLogo.png';
 import useStyles from './styles';
 const NavBar = () => {
   const classes = useStyles();
-  const count = useSelector((state) => state?.user?.cart?.total_items);
+  const count = useSelector((state) => state?.cart?.cart?.total_items);
 
   return (
     <AppBar position='fixed' className={classes.appBar} color='inherit'>
