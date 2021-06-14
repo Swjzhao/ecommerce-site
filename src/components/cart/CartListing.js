@@ -49,7 +49,7 @@ const CartListing = (props) => {
             className={classes.emptyButton}
             size='large'
             component={Link}
-            to='/checkout'
+            href='/checkout'
             type='button'
             variant='contained'
             color='primary'
