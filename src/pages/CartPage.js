@@ -2,8 +2,8 @@ import {Button, Container, Link, Typography} from '@material-ui/core';
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import CartListing from './CartListing';
-import useStyles from './styles';
+import CartListing from '../components/cart/CartListing';
+import useStyles from '../components/cart/styles';
 
 const Cart = () => {
   // const isEmpty = useSelector((state) => state?.user?.cart?.total_items === 0);

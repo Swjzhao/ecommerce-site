@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 
-import {Cart, NavBar, ProductListings} from './components';
+import {NavBar} from './components';
 import Scaffold from './components/Scaffold';
 import {commerce} from './lib/commerce';
+import {CartPage, CheckoutPage, HomePage} from './pages';
 import {addAllCart} from './store/actions';
 
 const App = () => {
@@ -28,12 +29,17 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path="/">
-              <ProductListings
+              <HomePage
                 products={products} /> </Route>
             <Route exact path="/cart">
-              <Cart/>
+              <CartPage />
             </Route>
-
+            <Route exact path="/checkout">
+              <CheckoutPage />
+            </Route>
+            <Route path="/">
+              <Redirect to="/" />
+            </Route>
           </Switch>
         </Router>
       </Scaffold>

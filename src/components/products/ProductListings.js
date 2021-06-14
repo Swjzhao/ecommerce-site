@@ -4,11 +4,6 @@ import React from 'react';
 import Product from './Product';
 import useStyles from './styles';
 
-const mockProducts = [
-  {id: 1, name: 'Shoes', description: 'Running shoes.', price: 5},
-  {id: 2, name: 'Macbook', description: 'Apple macbook.', price: 10},
-];
-
 const ProductListings = (props) => {
   const classes = useStyles();
   const {products} = props;
