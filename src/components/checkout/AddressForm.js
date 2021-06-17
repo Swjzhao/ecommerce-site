@@ -62,8 +62,9 @@ const AddressForm = (props) => {
       </Typography>
       <FormProvider {...methods}>
         <form
-          onSubmit={methods.handleSubmit((data) =>
-            next({...data, shippingCountry, shippingSubdivision}),
+          onSubmit={methods.handleSubmit((data) => {
+            next({...data, shippingCountry, shippingSubdivision});
+          },
           )}
         >
           <Grid container spacing={3}>

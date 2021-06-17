@@ -8,16 +8,18 @@ const CustomTextField = (props) => {
   return (
     <Grid item xs={12} sm={col ?? 12}>
       <Controller
+        name={name}
+        control={control}
         render={({field}) => (
           <TextField
             fullWidth
-            name={name}
+
             label={label}
             required={required}
+            {...field}
             variant="outlined"
           />
-        )}
-        control={control}/>
+        )}/>
     </Grid>
   );
 };
