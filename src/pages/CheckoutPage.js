@@ -87,7 +87,7 @@ const CheckoutPage = () => {
   }, [cart]);
 
   return (
-    <Container maxWidth={'lg'} className={classes.wrapper}>
+    <Container maxWidth={'md'} className={classes.wrapper}>
       <Paper className={classes.paper}>
         <Typography variant='h4'>Checkout</Typography>
         <Stepper activeStep={step} className={classes.stepper}>
