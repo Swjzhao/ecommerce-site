@@ -100,21 +100,22 @@ const PaymentForm = (props) => {
       },
       shipping: {
         name: 'Temp',
-        street: shippingData.addrees1,
+        street: shippingData.address1,
         town_city: shippingData.city,
         subDivision: shippingData.shippingSubdivision,
         country: shippingData.shippingCountry,
         postal_code: shippingData.zip,
       },
       fulfillment: {
-        shipping_method: shippingData.shippingOption,
-        payment: {
-          gateway: 'stripe',
-          stripe: {
-            payment_method_id: paymentMethod.id,
-          },
+        shipping_method: shippingOption,
+      },
+      payment: {
+        gateway: 'stripe',
+        stripe: {
+          payment_method_id: paymentMethod.id,
         },
       },
+
     };
 
     setLoading(true);
