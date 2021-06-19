@@ -13,7 +13,7 @@ import {AddressForm, ConfirmationForm, PaymentForm} from '../components/checkout
 import useStyles from '../components/checkout/styles';
 import {commerce} from '../lib/commerce';
 
-const steps = ['Shipping', 'Payment', 'Review'];
+const steps = ['Shipping', 'Payment', 'Done!'];
 
 const CheckoutPage = () => {
   const [step, setStep] = useState(0);
