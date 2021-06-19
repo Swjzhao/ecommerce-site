@@ -14,6 +14,8 @@ export const ADD_CART_ITEM = 'ADD_CART_ITEM';
 export const UPDATE_CART_ITEM = 'UPDATE_CART_ITEM';
 export const DELETE_CART_ITEM = 'DELETE_CART_ITEM';
 
+export const SET_ORDER = 'SET_ORDER';
+
 export const ADD_ALL_USERS = 'ADD_ALL_USERS';
 export const ADD_MORE_USERS = 'ADD_MORE_USERS';
 export const ADD_USER= 'ADD_USER';

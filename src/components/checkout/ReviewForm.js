@@ -33,7 +33,7 @@ const ReviewForm = (props) => {
           </ListItem>
         ))}
         <ListItem>
-          <ListItemText primary={'Total:'} />
+          <ListItemText primary={'Subtotal:'} />
           <Typography variant="h6">
             {checkoutToken.live.subtotal.formatted_with_symbol}
           </Typography>

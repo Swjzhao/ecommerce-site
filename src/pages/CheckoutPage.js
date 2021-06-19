@@ -51,6 +51,7 @@ const CheckoutPage = () => {
             checkoutToken={checkoutToken}
             nextStep={nextStep}
             backStep={backStep}
+            getToken={getToken}
             shippingData = {shippingData}
           />
         );
@@ -63,17 +64,22 @@ const CheckoutPage = () => {
     }
   };
 
-  const getToken = async () => {
+  const getToken = async (setToken) => {
     try {
-      const token = await commerce.checkout.generateToken(cart.id, {
-        type: 'cart',
-      });
-      console.log(token);
-      setCheckoutToken(token);
+      if (setToken) {
+        setCheckoutToken(setToken);
+      } else {
+        const token = await commerce.checkout.generateToken(cart.id, {
+          type: 'cart',
+        });
+        console.log(token);
+        setCheckoutToken(token);
+      }
     } catch (err) {
       console.log(err);
     }
   };
+
 
   useEffect(() => {
     getToken();

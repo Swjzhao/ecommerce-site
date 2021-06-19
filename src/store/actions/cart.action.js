@@ -57,4 +57,14 @@ export const refreshCart = () => async (dispatch) => {
   }
 };
 
+export const handleCheckout = (checkoutTokenId, newOrder) => async (dispatch) => {
+  try {
+    const res = await commerce.checkout.capture(checkoutTokenId, newOrder);
+    dispatch({type: types.SET_ORDER, payload: res});
+    dispatch(refreshCart());
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 
