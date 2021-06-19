@@ -80,55 +80,54 @@ const PaymentForm = (props) => {
     if (!stripe || !elements) return;
 
     const cardElement = elements.getElement(CardElement);
-    const {err, paymentMethod} = await stripe.createPaymentMethod({
-      type: 'card',
-      card: cardElement,
-    });
-
-    if (err) {
-      console.log(err);
-      return;
-    }
-    console.log(paymentMethod);
-
-    const finalOrderData = {
-      line_items: checkoutToken.live.line_items,
-      customer: {
-        firstname: shippingData.firstName,
-        lastname: shippingData.lastName,
-        email: shippingData.email,
-      },
-      shipping: {
-        name: 'Temp',
-        street: shippingData.address1,
-        town_city: shippingData.city,
-        subDivision: shippingData.shippingSubdivision,
-        country: shippingData.shippingCountry,
-        postal_code: shippingData.zip,
-      },
-      fulfillment: {
-        shipping_method: shippingOption,
-      },
-      payment: {
-        gateway: 'stripe',
-        stripe: {
-          payment_method_id: paymentMethod.id,
-        },
-      },
-
-    };
-
-    setLoading(true);
     try {
-      await dispatch(handleCheckout(checkoutToken.id, finalOrderData));
+      const {paymentMethod} = await stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+      });
+
+      const finalOrderData = {
+        line_items: checkoutToken.live.line_items,
+        customer: {
+          firstname: shippingData.firstName,
+          lastname: shippingData.lastName,
+          email: shippingData.email,
+        },
+        shipping: {
+          name: 'Temp',
+          street: shippingData.address1,
+          town_city: shippingData.city,
+          subDivision: shippingData.shippingSubdivision,
+          country: shippingData.shippingCountry,
+          postal_code: shippingData.zip,
+        },
+        fulfillment: {
+          shipping_method: shippingOption,
+        },
+        payment: {
+          gateway: 'stripe',
+          stripe: {
+            payment_method_id: paymentMethod.id,
+          },
+        },
+
+      };
+
+      setLoading(true);
+      try {
+        await dispatch(handleCheckout(checkoutToken.id, finalOrderData));
+        setLoading(false);
+        nextStep();
+      } catch (err) {
+        console.log('Error');
+        setPaymentError(err.message);
+        setLoading(false);
+      }
       setLoading(false);
-      nextStep();
     } catch (err) {
-      console.log('Error');
-      setPaymentError(err.message);
-      setLoading(false);
+      console.log(err.message);
+      setPaymentError('Payment Incorrect');
     }
-    setLoading(false);
   };
   return (
     <div>
