@@ -11,7 +11,6 @@ import {Link} from 'react-router-dom';
 
 const ConfirmationForm = () => {
   const order = useSelector((state) => state.cart.order);
-  console.log(order);
   return (
     <>
       {' '}

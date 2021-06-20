@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 import {AddressForm, ConfirmationForm, PaymentForm} from '../components/checkout';
 import useStyles from '../components/checkout/styles';
@@ -20,14 +21,13 @@ const CheckoutPage = () => {
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
-
+  const history = useHistory();
   const cart = useSelector((state) => state.cart.cart);
 
   const next = (data) => {
     if (step === 0) {
       setShippingData(data);
     }
-    console.log(data);
     nextStep();
   };
 
@@ -72,7 +72,6 @@ const CheckoutPage = () => {
         const token = await commerce.checkout.generateToken(cart.id, {
           type: 'cart',
         });
-        console.log(token);
         setCheckoutToken(token);
       }
     } catch (err) {

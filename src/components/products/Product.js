@@ -15,7 +15,6 @@ import useStyles from './styles';
 
 const Product = (props) => {
   const {product} = props;
-  console.log(product);
   const classes = useStyles();
 
   const dispatch = useDispatch();

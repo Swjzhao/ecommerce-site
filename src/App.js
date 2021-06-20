@@ -18,7 +18,6 @@ const App = () => {
   const fetchProducts = async () => {
     const res = await commerce.products.list();
     setProducts(res.data);
-    // console.log(res);
   };
   const dispatch = useDispatch();
 

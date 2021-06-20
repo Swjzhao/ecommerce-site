@@ -8,7 +8,6 @@ import useStyles from '../components/cart/styles';
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
   const classes = useStyles();
-  console.log(cart);
 
   return (
     <Container maxWidth={'lg'} className={classes.wrapper}>

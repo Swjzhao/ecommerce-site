@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 const PaymentForm = (props) => {
   const {backStep, checkoutToken, shippingData, nextStep} = props;
-  console.log(shippingData);
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
   const [loading, setLoading] = useState(true);
@@ -52,7 +51,6 @@ const PaymentForm = (props) => {
         checkoutTokenId,
         {country, region: stateProvince},
     );
-    console.log(options);
     setShippingOptions(options);
     setShippingOption(options[0].id);
     setLoading(false);
